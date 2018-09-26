@@ -3,7 +3,20 @@
 #### By **Kabage Mark Chege**
 ## Description
 This is an app that allows me as the super user that i created can post photos that i like based by
-category and location.One can be able to see different photos based by Location with different categories to them.Once you click on a photo,one should be able to see the expanded version of the photos which include the Details ie:name description category etc  
+category and location.One can be able to see different photos based by Location with different categories to them.Once you click on a photo,one should be able to see the expanded version of the photos which include the Details ie:name description category etc .
+
+####Cateories include:
+* Travel
+* sports
+* Family
+* parties
+
+####Locations include:
+* Africa
+* Asia
+* Australia
+* Europe
+
 ## Setup
 * clone the repostory with **git clone 'URL'**
 * Activate virtual with **source virtual/bin/activate**
