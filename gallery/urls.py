@@ -3,5 +3,5 @@ from django.conf import settings
 from .import views
 
 urlpatterns=[
-    url(r'^$',views.Gallery,name = 'gallery'),
+    url(r'^',views.Gallery,name = 'gallery'),
     ] 
