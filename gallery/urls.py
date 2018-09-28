@@ -5,6 +5,7 @@ from .import views
 
 urlpatterns=[
     url(r'^$',views.Gallery,name = 'gallery'),
+    url(r'^search/', views.search_results, name='search_results'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)     
