@@ -5,8 +5,15 @@ def Gallery(request):
     image = Image.display_image()
     return render(request, 'index.html',{"image":image})
 
+def search_results(request):
 
-def news_today(request):
-    date = dt.date.today()
-    news = Article.today_news()
-    return render(request,'all-news/today-news.html',{"date":date,"news":news})    
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_images = Image.search_by_category(search_term)
+        result_images = f"{search_term}"
+
+        return render(request, 'searched.html',{"message":message,"searched_images": searched_images})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'searched.html',{"message":message})  
