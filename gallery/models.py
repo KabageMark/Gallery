@@ -9,5 +9,11 @@ class Image(models.Model):
     location = models.ForeignKey(Editor)
     category = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(auto_now_add=True)
-   
- 
+
+
+class Location(models.Model):
+    name = models.CharField(max_length=60)
+
+
+# class Category(models.Model):
+#     name = models.CharField(max_length=60) 
