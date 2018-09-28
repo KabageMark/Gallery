@@ -15,5 +15,5 @@ class Location(models.Model):
     name = models.CharField(max_length=60)
 
 
-# class Category(models.Model):
-#     name = models.CharField(max_length=60) 
+class Category(models.Model):
+    name = models.CharField(max_length=60) 
