@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from .import views
 
 urlpatterns=[
-    url(r'^',views.Gallery,name = 'gallery'),
+    url(r'^$',views.Gallery,name = 'gallery'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)     

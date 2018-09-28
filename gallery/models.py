@@ -11,9 +11,15 @@ class Category(models.Model):
 
 class Image(models.Model):
     name = models.CharField(max_length=60)
-    image = models.ImageField(upload_to = 'articles/')
+    image = models.ImageField(upload_to = 'gallery/')
     descripition = models.TextField()
     location = models.ForeignKey(Location)
     category = models.ManyToManyField(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
+    
+    @classmethod
+    def display_image(cls):
+        images = cls.objects.all()
+        return images
+        
 
