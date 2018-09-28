@@ -21,5 +21,10 @@ class Image(models.Model):
     def display_image(cls):
         images = cls.objects.all()
         return images
+
+    def search_by_category(cls,search_term):
+        image = cls.objects.filter(category__icontains=search_term)
+        return image
+    
         
 
