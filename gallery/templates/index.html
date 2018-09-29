@@ -1,74 +1,67 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container-fluid">
-    {% for img in image %}
+    <!-- {% for img in image %}
     <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="{{img.image.url}}" alt="Card image cap" data-toggle="modal" data-target="#exampleModalCenter">
     <div class="card-body">
     </div>
     </div>
-    
+    {% endfor %} -->
     <!-- Trigger the Modal -->
-    {}
+
 <div class="row"> 
   <div class="column">
-<img id="myImg" src="{{img.personal.url}}" alt="description:{{img.descripition}}" style="width:100%;max-width:300px">
+{% for personal in personal %}
+<img class="myImg" src="{{personal.image.url}}" alt="pics"  data-toggle="modal" data-target="#exampleModalCenter{{personal.image.id}}" style="width:100%;max-width:300px">
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter{{personal.image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img class="myImg" src="{{personal.image.url}}" alt="pics"  data-toggle="modal" data-target="#exampleModalCenter{{personal.image.id}}">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+     
+     
+{% endfor %}
 </div>
  
-    <div class="column">
-  <img id="myImg" src="{{img.travel.url}}" alt="description:{{img.descripition}}" style="width:100%;max-width:300px">
+
+  <div class="column">
+  {% for travel in travel %}
+  <img class="myImg" src="{{img.travel.url}}" alt=""  data-toggle="modal" data-target="#exampleModalCenter" style="width:100%;max-width:300px">
+  {% endfor %}
   </div>
-   
-      <div class="column">
-    <img id="myImg" src="{{img.sports.url}}" alt="description:{{img.descripition}}" style="width:100%;max-width:300px">
+
+
+
+    <div class="column">
+      {% for sports in sports %}
+      <img class="myImg" src="{{img.sports.url}}" alt=""  data-toggle="modal" data-target="#exampleModalCenter" style="width:100%;max-width:300px">
+      {% endfor %}
     </div>
      
+
     <div class="column">
-    <img id="myImg" src="{{img.family.url}}" alt="description:{{img.descripition}}" style="width:100%;max-width:300px">
+    {% for family in family %}
+    <img class="myImg" src="{{img.family.url}}" alt=""  data-toggle="modal" data-target="#exampleModalCenter" style="width:100%;max-width:300px">
+    {% endfor %}
     </div>
-  </div>  
-<!-- The Modal -->
-<div id="myModal" class="modal">
+  </div> 
 
-  <!-- The Close Button -->
-  <span class="close">&times;</span>
-
-  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01">
-  <p>{{img.descripition}}</p>
-  <br>    
-  <p>{{img.location}}</p>
-
-  <!-- Modal Caption (Image Text) -->
-  <div id="caption">
-
-  </div>
-</div>
-    
-      <!-- Modal
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle"><p>{{img.name}}</p></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <img class="card-img-top" src="{{img.image.url}}" alt="Card image cap">
-              <br>
-              <p><strong>{{img.descripition}}</strong></p>
-              <br>
-              <p><strong>{{img.location}}</strong></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      {% endfor %}
 
 {% endblock %}
