@@ -35,21 +35,11 @@
             <br>
             <p><strong>Category</strong></p> <p>{{personal.category}}</p>
         </div>
-        <form>
-          <input type="text" id="link" value="127.0.0.1:8000{{personal.image.url}}">
-          <button type="button" class="btn btn-primary" onclick="myfunction1()">Copy link</button>
-        </form>
-        </form>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" onclick="myfunction1()">Copy link</button>
-          
-          <a onclick="copyLink({{personal.id}})"><button type="button" class="btn btn-outline-warning my-2 my-sm-0 link-btn">Copy
-              image Link</button></a>
+          <button type="button" class="btn btn-primary" onclick="copyLink({{personal.id}})">Copy link</button>
           <input class="form-control" type="text" value="127.0.0.1:8000{{personal.image.url}}"
             id="thislinkhere-{{personal.id}}">
-          <a></a> 
-          <a></a>
         </div>
       </div>
     </div>
@@ -86,7 +76,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="myfunction2()">Copy link</button>
+        <button type="button" class="btn btn-primary" onclick="copyLink({{travel.id}})">Copy link</button>
+        <input class="form-control" type="text" value="127.0.0.1:8000{{travel.image.url}}" id="thislinkhere-{{travel.id}}">
       </div>
     </div>
   </div>
@@ -123,7 +114,8 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="myfunction3()">Copy link</button>
+                <button type="button" class="btn btn-primary" onclick="copyLink({{sports.id}})">Copy link</button>
+                <input class="form-control" type="text" value="127.0.0.1:8000{{sports.image.url}}" id="thislinkhere-{{sports.id}}">
               </div>
             </div>
           </div>
@@ -158,70 +150,12 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                         </div>
+              <button type="button" class="btn btn-primary" onclick="copyLink({{family.id}})">Copy link</button>
+              <input class="form-control" type="text" value="127.0.0.1:8000{{family.image.url}}" id="thislinkhere-{{family.id}}">
+            </div>
           </div>
         </div>
       </div>
-      <script>
-          function copyLink(id) {
-              /* Get the text field */
-              var copyText = document.getElementById("link" + id);
-
-              /* Select the text field */
-              copyText.select();
-
-              /* Copy the text inside the text field */
-              document.execCommand("copy");
-
-              /* Alert the copied text */
-              alert("Copied the text: " + copyText.value);
-              }
-          
-              // function myFunction2() {
-              // /* Get the text field */
-              // var copyText = document.getElementById("{{travel.url}}");
-
-              // /* Select the text field */
-              // copyText.select();
-
-              // /* Copy the text inside the text field */
-              // document.execCommand("copy");
-
-              // /* Alert the copied text */
-              // alert("Copied the text: " + copyText.value);
-              // }
-
-              // function myFunction3() {
-              // /* Get the text field */
-              // var copyText = document.getElementById("{{sports.url}}");
-
-              // /* Select the text field */
-              // copyText.select();
-
-              // /* Copy the text inside the text field */
-              // document.execCommand("copy");
-
-              // /* Alert the copied text */
-              // alert("Copied the text: " + copyText.value);
-              // }
-
-              // function myFunction4() {
-              // /* Get the text field */
-              // var copyText = document.getElementById("{{family.url}}");
-
-              // /* Select the text field */
-              // copyText.select();
-
-              // /* Copy the text inside the text field */
-              // document.execCommand("copy");
-
-              // /* Alert the copied text */
-              // alert("Copied the text: " + copyText.value);
-              // }
-          </script>
-
-
     {% endfor %}
     </div>
   </div> 
