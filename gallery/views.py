@@ -14,7 +14,7 @@ def search_results(request):
         search_term = request.GET.get("image")
         searched_images = Image.search_by_category(search_term)
         message = f"{search_term}"
-
+        
         return render(request, 'searched.html',{"message":message,"searched_images": searched_images})
 
     else:

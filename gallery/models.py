@@ -28,12 +28,12 @@ class Image(models.Model):
         images = cls.objects.filter(category__name=category)
         return images
 
-    def display_id(cls):
-        images = cls.objects.all()
-        return images    
+    def display_imageid(cls):
+        imageid = cls.objects.all()
+        return imageid    
 
-    def search_by_category(cls,search_term):
-        image = cls.objects.filter(category__icontains=search_term)
+    def search_by_category(cls,category):
+        image = cls.objects.filter(category__name=search_term)
         return image
     
         

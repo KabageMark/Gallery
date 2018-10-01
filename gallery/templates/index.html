@@ -13,20 +13,27 @@
 <div class="row"> 
   <div class="column">
 {% for personal in personal %}
-<img class="myImg" src="{{personal.image.url}}" alt="pics"  data-toggle="modal" data-target="#exampleModalCenter{{personal.image.id}}" style="width:100%;max-width:300px">
+<img class="myImg" src="{{personal.image.url}}" alt="pics"  data-toggle="modal" data-target="#{{personal.id}}" style="width:100%;max-width:300px">
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter{{personal.image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="{{personal.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">{{personal.name}}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <img src="{{personal.image.url}}" alt="pics" style="width:100%;"  data-toggle="modal" data-target="#exampleModalCenter{{personal.image.id}}">
+            <img src="{{personal.image.url}}"
+            data-toggle="modal" data-target="#{{image.id}}"
+            alt="pics" style="width:100%;" >
+            <p><strong>description</strong> <p> {{personal.descripition}}</p>
+            <br>
+            <p><strong>location</strong></p> <p>{{personal.location}}</p>
+            <br>
+            <p><strong>Category</strong></p> <p>{{personal.category}}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -43,7 +50,36 @@
 
   <div class="column">
   {% for travel in travel %}
-  <img class="myImg" src="{{img.travel.url}}" alt=""  data-toggle="modal" data-target="#exampleModalCenter" style="width:100%;max-width:300px">
+  <img class="myImg" src="{{travel.image.url}}" alt=""  data-toggle="modal" data-target="#{{travel.id}}" style="width:100%;max-width:300px">
+
+  <!-- Modal -->
+<div class="modal fade" id="{{travel.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{travel.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <img src="{{travel.image.url}}"
+          data-toggle="modal" data-target="#{{image.id}}"
+          alt="pics" style="width:100%;" >
+          <p><strong>description</strong> <p> {{travel.descripition}}</p>
+          <br>
+          <p><strong>location</strong></p> <p>{{travel.location}}</p>
+          <br>
+          <p><strong>Category</strong></p> <p>{{travel.category}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+   
   {% endfor %}
   </div>
 
@@ -51,14 +87,71 @@
 
     <div class="column">
       {% for sports in sports %}
-      <img class="myImg" src="{{img.sports.url}}" alt=""  data-toggle="modal" data-target="#exampleModalCenter" style="width:100%;max-width:300px">
+      <img class="myImg" src="{{sports.image.url}}" alt=""  data-toggle="modal" data-target="#{{sports.id}}" style="width:100%;max-width:300px">
+
+        <!-- Modal -->
+        <div class="modal fade" id="{{sports.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">{{sports.name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <img src="{{sports.image.url}}"
+                  data-toggle="modal" data-target="#{{image.id}}"
+                  alt="pics" style="width:100%;" >
+                  <p><strong>description</strong> <p> {{sports.descripition}}</p>
+                  <br>
+                  <p><strong>location</strong></p> <p>{{sports.location}}</p>
+                  <br>
+                  <p><strong>Category</strong></p> <p>{{sports.category}}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
       {% endfor %}
     </div>
      
 
     <div class="column">
     {% for family in family %}
-    <img class="myImg" src="{{img.family.url}}" alt=""  data-toggle="modal" data-target="#exampleModalCenter" style="width:100%;max-width:300px">
+    <img class="myImg" src="{{family.image.url}}" alt=""  data-toggle="modal" data-target="#{{family.id}}" style="width:100%;max-width:300px">
+
+      <!-- Modal -->
+      <div class="modal fade" id="{{family.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">{{family.name}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <img src="{{family.image.url}}"
+                data-toggle="modal" data-target="#{{image.id}}"
+                alt="pics" style="width:100%;" >
+                <p><strong>description</strong> <p> {{family.descripition}}</p>
+                <br>
+                <p><strong>location</strong></p> <p>{{family.location}}</p>
+                <br>
+                <p><strong>Category</strong></p> <p>{{family.category}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     {% endfor %}
     </div>
   </div> 
