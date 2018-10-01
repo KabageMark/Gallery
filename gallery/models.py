@@ -31,9 +31,9 @@ class Image(models.Model):
     def display_imageid(cls):
         imageid = cls.objects.all()
         return imageid    
-
-    def search_by_category(cls,category):
-        image = cls.objects.filter(category__name=search_term)
+    @classmethod
+    def search_by_category(cls,search_term):
+        image = Image.objects.filter(category__name__icontains=search_term)
         return image
     
         

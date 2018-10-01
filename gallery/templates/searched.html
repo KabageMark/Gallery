@@ -1,10 +1,9 @@
 {%extends 'base.html'%} 
 {% block content %}
-<div class="container">
-
+<div class="container-fluid">
   <div class="row">
-    {% if image %}
-      <h2>Found {{ images|length }} of searched term {{message}}</h2>
+    {% if searched_images %}
+      <h2>Found {{ searched_images|length }} of searched term {{message}}</h2>
     {% else %}
       <h2> Found 0 image for the category {{message}}</h2>
     {% endif %}
@@ -13,13 +12,14 @@
 
   <div class="row">
 
-  {% if image %}
-    {% for img in image %}
+  {% if searched_images %}
+    {% for img in searched_images %}
       <div class="col-sm-6 col-md-3">
-          <h1>{{article.name}}</h1>
+          <img src="{{img.image.url}}" style="width:100%;max-width:300px" alt="">
       </div>
     {% endfor %}
   {% endif %}
   </div>
+</div>
 </div>
 {% endblock %}
