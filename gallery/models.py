@@ -42,6 +42,12 @@ class Image(models.Model):
         return self.delete() 
 
     @classmethod
+    def retrieve_all(cls):
+        all_objects = Image.objects.all()
+        for item in all_objects:
+            return item;    
+
+    @classmethod
     def search_by_category(cls,search_term):
         image = Image.objects.filter(category__name__icontains=search_term)
         return image
