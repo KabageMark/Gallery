@@ -8,7 +8,7 @@ class MyGalery_TestCases(TestCase):
         self.new_category.save_category()
         self.new_location = Location(name = 'Mombasa')
         self.new_location.save_location()
-        self.new_image = Image(id=1,image_name='learn', image_description='Learn 2017',image_path='media/gallery/dance-3134828_1920.jpg',image_category=self.new_category,image_location=self.new_location)
+        self.new_image = Image(id=1,name='learn', descripition='Learn 2017',image='media/gallery/dance-3134828_1920.jpg',category=self.new_category,location=self.new_location)
     
     def tearDown(self):
         Category.objects.all().delete()
@@ -27,7 +27,7 @@ class MyGalery_TestCases(TestCase):
 
     def test_delete_method(self):
         self.new_image.save_image()
-        filtered_object = Image.objects.filter(image_name='learn')
+        filtered_object = Image.objects.filter(name='learn')
         Image.delete_image(filtered_object)
         all_objects = Image.objects.all()
         self.assertTrue(len(all_objects) == 0)

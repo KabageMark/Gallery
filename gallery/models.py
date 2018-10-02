@@ -28,16 +28,18 @@ class Image(models.Model):
     location = models.ForeignKey(Location)
     category = models.ForeignKey(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
-    
+
+
     @classmethod
     def display_image(cls,category):
         images = cls.objects.filter(category__name=category)
         return images
-
-    # @classmethod
-    # def display_image(cls):
-    #     image = cls.objects.all()
-    #     return image
+   
+    def save_image(self):
+        return self.save()
+        
+    def delete_image(self):
+        return self.delete() 
 
     @classmethod
     def search_by_category(cls,search_term):
