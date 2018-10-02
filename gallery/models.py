@@ -34,6 +34,10 @@ class Image(models.Model):
     def display_image(cls,category):
         images = cls.objects.filter(category__name=category)
         return images
+
+    def get_image_by_id(cls,incoming_id):
+        image_result = cls.objects.get(id=incoming_id)
+        return image_result    
    
     def save_image(self):
         return self.save()
@@ -55,7 +59,11 @@ class Image(models.Model):
     @classmethod
     def display_by_location(cls,location):
         image = Image.objects.filter(location__name__icontains=location)
-        return image    
-    
+        return image
+
+    @classmethod
+    def update_image(cls,current_value,new_value):
+        fetched_object = Image.objects.filter(name=current_value).update(name=new_value)
+        return fetched_object
         
 

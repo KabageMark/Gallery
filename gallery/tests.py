@@ -35,7 +35,7 @@ class MyGalery_TestCases(TestCase):
     def test_display_all_objects_method(self):
         self.new_image.save_image()
         all_objects = Image.retrieve_all()
-        self.assertEqual(all_objects.image_name,'learn')
+        self.assertEqual(all_objects.name,'learn')
 
 
     def test_update_single_object_property(self):
@@ -43,15 +43,18 @@ class MyGalery_TestCases(TestCase):
         filtered_object =Image.update_image('learn','Greener')
         fetched = Image.objects.get(image_name='Greener')
         self.assertEqual(fetched.image_name,'Greener')
+        
     def test_get_image_by_id(self):
         self.new_image.save_image()
         fetched_image = Image.get_image_by_id(1)
         self.assertEqual(fetched_image.id,1)
+
     def test_search_by_category(self):
         self.new_image.save_image()        
-        fetch_specific = Category.objects.get(cat_name='Dance')
-        self.assertTrue(fetch_specific.cat_name=='Dance')
+        fetch_specific = Category.objects.get(name='Dance')
+        self.assertTrue(fetch_specific.name=='Dance')
+
     def test_filter_by_location(self):
         self.new_image.save_image()        
-        fetch_specific = Location.objects.get(location_name='Mombasa')
-        self.assertTrue(fetch_specific.location_name=='Mombasa')
+        fetch_specific = Location.objects.get(name='Mombasa')
+        self.assertTrue(fetch_specific.name=='Mombasa')
