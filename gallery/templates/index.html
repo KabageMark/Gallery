@@ -10,6 +10,17 @@
     {% endfor %} -->
     <!-- Trigger the Modal -->
 
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% for cat in location_result %}
+            <a class="dropdown-item" href="/location/{{cat.location}}">{{cat.location}}</a>
+            {% endfor %}
+        </div>
+      </div>
+
 <div class="row"> 
   <div class="column">
 {% for personal in personal %}
