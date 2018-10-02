@@ -8,11 +8,17 @@ class Location(models.Model):
     def __str__(self):
         return self.name
 
+    def save_location(self):
+        return self.save()        
+
 class Category(models.Model):
     name = models.CharField(max_length=60,blank=True)
 
     def __str__(self):
         return self.name
+
+    def save_category(self):
+        return self.save()    
  
 
 class Image(models.Model):
