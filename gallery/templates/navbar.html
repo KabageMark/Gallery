@@ -1,10 +1,11 @@
-<nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">MyGallery</a>
-          <form class="form-inline my-2 my-lg-0"  action="{% url 'search_results' %}">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="image">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-      </nav>
 
-
+      <center>
+      <form action="{% url 'search_results' %}" id="form">
+          <input id="searchform" class="" type="search" placeholder="Search" name="image">
+          <button id ="searchbutton" class="" type="submit">Search</button>
+        </form>
+        </center>
+       <a href="{% url 'gallery' %}"><img id="logo1" src="http://2.bp.blogspot.com/-V31y2Ef4Ad0/VZservQf70I/AAAAAAAAdu8/ErI--hbXwfE/s1600/OpenCamera1.png" alt=""></a>
+    <br>
+    <br>
       
